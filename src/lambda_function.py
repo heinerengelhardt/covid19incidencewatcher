@@ -37,7 +37,7 @@ def lambda_handler(event, context):
     if oldincidence == newincidence:
         raise Exception('no incidence change')
     else:
-        return 'NEUE INZIDENZ IN ' + str(bl) + ' IM LANDKREIS ' + str(lk) + '!   ALT: ' + str(oldincidence) + '   NEU: ' + str(newincidence)
+        return f'***** NEUE INZIDENZ IN {lk}!   ALT: {oldincidence}   NEU: {newincidence} *****'
 
 def put_corona_dataset(item):
     dynamodb = boto3.resource('dynamodb')
